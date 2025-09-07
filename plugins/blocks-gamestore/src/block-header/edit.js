@@ -6,8 +6,9 @@ import {
 import { PanelBody, TextControl } from "@wordpress/components";
 import "./editor.scss";
 
-export default function Edit({ attributes, setAttributes }) {
-	const { memberLink, cartLink } = attributes;
+export default function Edit({ attributes = {}, setAttributes }) {
+	const { memberLink = "", cartLink = "" } = attributes;
+
 	return (
 		<>
 			<InspectorControls>
