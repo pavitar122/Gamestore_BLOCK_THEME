@@ -7,7 +7,7 @@ return array(
 		'name' => 'blocks-gamestore/block-contact',
 		'version' => '0.1.0',
 		'title' => 'Contact Block',
-		'category' => 'widgets',
+		'category' => 'gamestore',
 		'icon' => 'smiley',
 		'description' => 'Example block scaffolded with Create Block tool.',
 		'example' => array(
@@ -27,19 +27,17 @@ return array(
 		'apiVersion' => 3,
 		'name' => 'blocks-gamestore/block-header',
 		'version' => '0.1.0',
-		'title' => 'Contact Header',
+		'title' => 'Header Block',
 		'category' => 'gamestore',
 		'icon' => 'layout',
 		'description' => 'Site header block',
-		'example' => array(
-			
-		),
 		'supports' => array(
 			'html' => false
 		),
 		'attributes' => array(
 			'memberLink' => array(
-				'type' => 'string'
+				'type' => 'string',
+				'default' => 'Member Area'
 			),
 			'cartLink' => array(
 				'type' => 'string'
@@ -57,7 +55,7 @@ return array(
 		'name' => 'blocks-gamestore/block-hero',
 		'version' => '0.1.0',
 		'title' => 'Hero Block',
-		'category' => 'widgets',
+		'category' => 'gamestore',
 		'icon' => 'smiley',
 		'description' => 'Example block scaffolded with Create Block tool.',
 		'example' => array(

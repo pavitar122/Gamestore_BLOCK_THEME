@@ -3,20 +3,20 @@
 	"apiVersion": 3,
 	"name": "blocks-gamestore/block-header",
 	"version": "0.1.0",
-	"title": "Contact Header",
+	"title": "Header Block",
 	"category": "gamestore",
 	"icon": "layout",
 	"description": "Site header block",
-	"example": {},
 	"supports": {
 		"html": false
 	},
 	"attributes": {
 		"memberLink": {
-			"type": "string"
+			"type": "string",
+			"default": "Member Area"
 		},
-		"cartLink":{
-			"type" : "string"
+		"cartLink": {
+			"type": "string"
 		}
 	},
 	"textdomain": "blocks-gamestore",

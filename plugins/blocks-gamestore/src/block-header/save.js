@@ -1,24 +1,28 @@
-/**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
- */
-import { useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps, InnerBlocks } from "@wordpress/block-editor";
 
-/**
- * The save function defines the way in which the different attributes should
- * be combined into the final markup, which is then serialized by the block
- * editor into `post_content`.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#save
- *
- * @return {Element} Element to render.
- */
-export default function save() {
+export default function save({ attributes }) {
+	const { memberLink, cartLink } = attributes;
 	return (
-		<p { ...useBlockProps.save() }>
-			{ 'Blocks Gamestore – hello from the saved content!' }
-		</p>
+		<div {...useBlockProps.save()}>
+			<div className="inner-header" {...useBlockProps()}>
+				<InnerBlocks.Content />
+				<div className="right-section">
+					<div className="header-search"></div>
+					<div className="header-mode-switcher"></div>
+
+					{cartLink && (
+						<div className="header-cart-link">
+							<a href={cartLink}></a>
+						</div>
+					)}
+
+					{memberLink && (
+						<div className="header-member-link">
+							<a href={memberLink}>Member Area</a>
+						</div>
+					)}
+				</div>
+			</div>
+		</div>
 	);
 }
